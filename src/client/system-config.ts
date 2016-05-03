@@ -20,5 +20,13 @@ function createPackageConfig(barrelList: string[]): any {
 export const config: any = {
   packages: Object.assign({
     // Add your custom SystemJS packages here.
-  }, createPackageConfig(barrels))
+    'ts-md5': { 
+      map: { 
+        './md5': './dist/md5.js'
+      }
+    }
+  }, createPackageConfig(barrels)),
+  map: {
+    'ts-md5': 'vendor/ts-md5'
+  }
 };
